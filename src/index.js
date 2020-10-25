@@ -1,30 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import CommentDetail from "./CommentDetail";
+import faker from "faker";
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <div className="comment" >
-        <a href="/" className="avatar">
-          <img alt="avatar" />
-        </a>
-        <div className =  "content">
-          <a href = "/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 6:00 PM</span>
-          </div>
-          <div className="text">Nice Blog post !</div>
-        </div>
-      </div>
+      <CommentDetail
+        author="Sam"
+        timeAgo="Today at 7:33 PM"
+        content="Nice Blog Post"
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Ram"
+        timeAgo="Yesterday at 3:30 AM"
+        content="Loved this one"
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Sundar"
+        timeAgo="Today at 7:24 AM"
+        content="By the time it wil all change"
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author="Shyam"
+        timeAgo="Yesterday at 10:39 AM"
+        content="Wait for your time"
+        avatar={faker.image.avatar()}
+      />
     </div>
   );
 };
 
-
-ReactDOM.render(<App/> , document.querySelector('#root'));
-
+ReactDOM.render(<App />, document.querySelector("#root"));
 
 // import React from 'react';
 // import ReactDOM from 'react-dom';
